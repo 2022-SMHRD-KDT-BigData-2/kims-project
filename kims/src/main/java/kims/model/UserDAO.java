@@ -1,5 +1,9 @@
 package kims.model;
 
+import org.apache.ibatis.session.SqlSession;
+
+import Model.MemberVO;
+
 public class UserDAO {
 	private static SqlSessionFactory sqlSessionFactory; 
 
@@ -23,4 +27,5 @@ public class UserDAO {
 	   return cnt;
 	   
 	}
+
 }
