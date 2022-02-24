@@ -18,13 +18,14 @@ public class joinService extends HttpServlet {
 		request.setCharacterEncoding("euc-kr");
         
         String id =request.getParameter("id");
-        String name =request.getParameter("name");
         String pw =request.getParameter("pw");
+        String admin =request.getParameter("admin");
+        String answer=request.getParameter("answer");
+        String name =request.getParameter("name");
         String tel =request.getParameter("tel");
         String email =request.getParameter("email");
-        String admin =request.getParameter("admin");
-     
-        UserVO vo = new UserVO(id, name, pw, tel, email, admin);
+        
+        UserVO vo = new UserVO(id, name, pw, tel, email, admin, answer);
         
         // 2. DAO에 넘겨줘서 DB에 저장
         UserDAO dao=new UserDAO();
