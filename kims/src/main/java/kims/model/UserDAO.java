@@ -1,8 +1,11 @@
 package kims.model;
 
-import org.apache.ibatis.session.SqlSession;
+import java.io.InputStream;
 
-import Model.MemberVO;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class UserDAO {
 	private static SqlSessionFactory sqlSessionFactory; 
@@ -27,9 +30,6 @@ public class UserDAO {
 	   return cnt;
 	   
 	}
-<<<<<<< HEAD
-
-=======
 	public UserVO idCheck(String id) {
 	      SqlSession session = sqlSessionFactory.openSession();
 	      UserVO vo = session.selectOne("idCheck", id);
@@ -54,5 +54,5 @@ public class UserDAO {
 		return uvo;
 		
 	}
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-2/kims-project.git
+
 }
