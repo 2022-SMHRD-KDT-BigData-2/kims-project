@@ -27,5 +27,32 @@ public class UserDAO {
 	   return cnt;
 	   
 	}
+<<<<<<< HEAD
 
+=======
+	public UserVO idCheck(String id) {
+	      SqlSession session = sqlSessionFactory.openSession();
+	      UserVO vo = session.selectOne("idCheck", id);
+	      session.close();
+	      return vo;
+}
+	public UserVO emailCheck(String email) {
+	      SqlSession session = sqlSessionFactory.openSession();
+	      UserVO vo = session.selectOne("emailCheck", email);
+	      session.close();
+	      return vo;
+}
+	public UserVO login(UserVO vo) {
+		
+		// 1. sqlSession 생성
+		SqlSession session=sqlSessionFactory.openSession();
+		// 2. mapper에 정의해둔 sql문 사용
+		UserVO uvo=session.selectOne("loginService", vo);
+		// 3. session 닫기
+		session.close();
+		
+		return uvo;
+		
+	}
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-2/kims-project.git
 }
