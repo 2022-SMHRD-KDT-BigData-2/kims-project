@@ -7,6 +7,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+
+
+
 public class UserDAO {
 	private static SqlSessionFactory sqlSessionFactory; 
 
@@ -53,6 +56,28 @@ public class UserDAO {
 		
 		return uvo;
 		
+	}
+	public int update(UserVO vo) {
+		
+		// 1. sqlSession 생성
+		SqlSession session=sqlSessionFactory.openSession(true);
+		// 2. mapper에 정의해둔 sql문 사용
+		int cnt=session.update("updateService",vo);
+		// 3. session 닫기
+		session.close();
+		
+		return cnt;
+		
+	}
+	public int delete(UserVO vo) {
+		
+		SqlSession session=sqlSessionFactory.openSession(true);
+		// 2. mapper에 정의해둔 sql문 사용
+		int cnt=session.delete("deleteService",vo);
+		// 3. session 닫기
+		session.close();
+		
+		return cnt;
 	}
 
 }

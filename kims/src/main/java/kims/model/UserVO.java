@@ -9,6 +9,13 @@ public class UserVO {
 	   private String admin;
 	   private String answer;
 	   
+	   public UserVO(String id, String pw, String tel, String email) {
+			super();
+			this.id = id;
+			this.pw = pw;
+			this.tel = tel;
+			this.email = email;
+		}
 	   public UserVO(String id, String pw) {
 			this.id = id;
 			this.pw = pw;

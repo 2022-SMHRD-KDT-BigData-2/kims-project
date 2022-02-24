@@ -4,7 +4,24 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kims.model.UserDAO">
 <insert id="joinService" parameterType="kims.model.UserDAO">
-insert into user values(#{id},#{name},#{pw},#{tel},#{email},#{admin})
+insert into user_info values(#{id},#{name},#{pw},#{tel},#{email},#{admin},#{answer})
 </insert>
+<select id="loginService" parameterType="kims.model.UserVO" resultType="kims.model.UserVO">
+select * from user_info where id=#{id} and pw=#{pw}
+</select>
+<update id="updateService" parameterType="kims.model.UserVO">
+update user_info set tel=#{tel}, email=#{email}, pw=#{pw} where id=#{id}
 
+</update>
+<delete id="deleteService" parameterType="kims.model.UserVO">
+delete from user_info where id=#{id}
+</delete>
+<select id="idCheck" resultType="kims.model.UserVO">
+select * from user_info
+where id =#{id}
+</select>
+<select id="emailCheck" resultType="kims.model.UserVO">
+select * from user_info
+where email =#{email}
+</select>
 </mapper>
