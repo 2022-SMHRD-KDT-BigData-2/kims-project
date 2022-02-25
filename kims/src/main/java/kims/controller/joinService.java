@@ -20,10 +20,10 @@ public class joinService extends HttpServlet {
         String id =request.getParameter("id");
         String pw =request.getParameter("pw");
         String admin =request.getParameter("admin");
-        String answer=request.getParameter("answer");
         String name =request.getParameter("name");
         String tel =request.getParameter("tel");
         String email =request.getParameter("email");
+        String answer =request.getParameter("answer");
         
         UserVO vo = new UserVO(id, name, pw, tel, email, admin, answer);
         
