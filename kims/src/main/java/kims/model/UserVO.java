@@ -7,6 +7,24 @@ public class UserVO {
 	private String tel;
 	private String email;
 	private String admin;
+<<<<<<< HEAD
+
+	public UserVO(String id, String pw, String tel, String email) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.tel = tel;
+		this.email = email;
+	}
+
+	public UserVO(String id, String pw) {
+		this.id = id;
+		this.pw = pw;
+	}
+=======
+	private String answer;
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-2/kims-project.git
+
 
 	public UserVO(String id, String pw, String tel, String email) {
 		super();
@@ -21,7 +39,7 @@ public class UserVO {
 		this.pw = pw;
 	}
 
-	public UserVO(String id, String name, String pw, String tel, String email, String admin) {
+	public UserVO(String id, String name, String pw, String tel, String email, String admin, String answer) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -29,6 +47,7 @@ public class UserVO {
 		this.tel = tel;
 		this.email = email;
 		this.admin = admin;
+		this.answer=answer;
 	}
 
 	public String getId() {
