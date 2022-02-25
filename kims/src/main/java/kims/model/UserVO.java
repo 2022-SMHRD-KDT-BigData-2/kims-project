@@ -8,8 +8,19 @@ public class UserVO {
 	   private String email;
 	   private String admin;
 	   
+<<<<<<< HEAD
 		public UserVO(String id, String pw) {
 			super();
+=======
+	   public UserVO(String id, String pw, String tel, String email) {
+			super();
+			this.id = id;
+			this.pw = pw;
+			this.tel = tel;
+			this.email = email;
+		}
+	   public UserVO(String id, String pw) {
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-2/kims-project.git
 			this.id = id;
 			this.pw = pw;
 		}
