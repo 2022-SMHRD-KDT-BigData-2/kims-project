@@ -7,9 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import kims.model.UserVO;
-
-public class UserDAO {
+public class ReservationDAO {
 	private static SqlSessionFactory sqlSessionFactory; 
 
 	   static{   
@@ -20,26 +18,15 @@ public class UserDAO {
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }
-	   }
-	
-	public int join(UserVO vo) {
-	   SqlSession session =sqlSessionFactory.openSession(true);
-
-	   int cnt = session.insert("joinService",vo);
-	   
-	   session.close();
-
-	   return cnt;
-	   
 	}
-	public UserVO login(UserVO vo) {
-		
-		SqlSession session = sqlSessionFactory.openSession();
-		
-		UserVO uvo = session.selectOne("loginService", vo);
-		
-		session.close();
-		
-		return uvo;
+
+		public int doReser(ReservationVO vo) {
+			   SqlSession session =sqlSessionFactory.openSession(true);
+
+			   int cnt = session.insert("doReser",vo);
+			   
+			   session.close();
+
+			   return cnt;
 	}
 }

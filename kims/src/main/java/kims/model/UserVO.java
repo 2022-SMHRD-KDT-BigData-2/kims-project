@@ -7,13 +7,14 @@ public class UserVO {
 	   private String tel;
 	   private String email;
 	   private String admin;
-	   private String answer;
 	   
-	   public UserVO(String id, String pw) {
+		public UserVO(String id, String pw) {
+			super();
 			this.id = id;
 			this.pw = pw;
 		}
-	   public UserVO(String id, String name, String pw, String tel, String email, String admin, String answer) {
+
+	public UserVO(String id, String name, String pw, String tel, String email, String admin) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -21,9 +22,7 @@ public class UserVO {
 		this.tel = tel;
 		this.email = email;
 		this.admin = admin;
-		this.answer = answer;
 	}
-	   
 	public String getId() {
 		return id;
 	}
@@ -60,11 +59,6 @@ public class UserVO {
 	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
-	public String getAnswer() {
-		return answer;
-	}
-	public void setAnswer(String answer) {
-		this.answer = answer;
-	}
-	   
+	  
+
 }
