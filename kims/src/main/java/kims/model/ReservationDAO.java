@@ -20,13 +20,13 @@ public class ReservationDAO {
 	      }
 	}
 
-		public int doReser(ReservationVO vo) {
+		public ReservationVO doReser(ReservationVO vo) {
 			   SqlSession session =sqlSessionFactory.openSession(true);
 
-			   int cnt = session.insert("doReser",vo);
+			   int cnt = session.update("doReser",vo);
 			   
 			   session.close();
 
-			   return cnt;
+			   return vo;
 	}
 }
