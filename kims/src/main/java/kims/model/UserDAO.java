@@ -4,23 +4,15 @@ import java.io.InputStream;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
-
 import org.apache.ibatis.session.SqlSessionFactory;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-
-
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+<<<<<<< HEAD
 import kims.model.UserVO;
 
 
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
-
-
-
-import kims.model.UserVO;
+//github.com/2022-SMHRD-KDT-BigData-2/kims-project.git
 
 public class UserDAO {
 	private static SqlSessionFactory sqlSessionFactory; 
@@ -43,7 +35,10 @@ public class UserDAO {
 	   session.close();
 
 	   return cnt;
-
+	   
+<<<<<<< HEAD
+	}
+=======
 	}
 	public UserVO idCheck(String id) {
 	      SqlSession session = sqlSessionFactory.openSession();
@@ -55,9 +50,9 @@ public class UserDAO {
 	      SqlSession session = sqlSessionFactory.openSession();
 	      UserVO vo = session.selectOne("emailCheck", email);
 	      session.close();
-
 	      return vo;
 }
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-2/kims-project.git
 	public UserVO login(UserVO vo) {
 		
 		SqlSession session = sqlSessionFactory.openSession();
@@ -68,7 +63,8 @@ public class UserDAO {
 		
 		return uvo;
 	}
-
+<<<<<<< HEAD
+=======
 	public int update(UserVO vo) {
 		
 		// 1. sqlSession »ý¼º
@@ -90,13 +86,7 @@ public class UserDAO {
 		session.close();
 		
 		return cnt;
-		
 	}
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-2/kims-project.git
 }
-
-
-	
-
-
-
-
