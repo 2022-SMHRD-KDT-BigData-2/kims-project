@@ -5,10 +5,18 @@ import java.io.InputStream;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import kims.model.UserVO;
+
+
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 
 
+
+
+import kims.model.UserVO;
 
 public class UserDAO {
 	private static SqlSessionFactory sqlSessionFactory; 
@@ -34,6 +42,7 @@ public class UserDAO {
 	   
 
 	}
+
 	public UserVO idCheck(String id) {
 	      SqlSession session = sqlSessionFactory.openSession();
 	      UserVO vo = session.selectOne("idCheck", id);
@@ -45,7 +54,9 @@ public class UserDAO {
 	      UserVO vo = session.selectOne("emailCheck", email);
 	      session.close();
 	      return vo;
+
 }
+
 
 	public UserVO login(UserVO vo) {
 		
@@ -81,5 +92,7 @@ public class UserDAO {
 		return cnt;
 	}
 
+	}
 
-}
+
+

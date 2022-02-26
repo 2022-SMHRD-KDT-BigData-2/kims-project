@@ -21,10 +21,10 @@ public class loginService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 			// 1.피라미터 수집
-			String email= request.getParameter("id");
+			String id= request.getParameter("id");
 			String pw= request.getParameter("pw");
 			
-			UserVO vo =new UserVO(email,pw);
+			UserVO vo =new UserVO(id,pw);
 			
 			// DAO의 로그인 메서드 사용
 			UserDAO dao =new UserDAO();
