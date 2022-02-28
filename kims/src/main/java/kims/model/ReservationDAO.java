@@ -8,25 +8,26 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class ReservationDAO {
-	private static SqlSessionFactory sqlSessionFactory; 
+	
+	private static SqlSessionFactory sqlSessionFactory;
 
-	   static{   
-	      try {
-	         String resource = "Mapper/config.xml";
-	         InputStream inputStream = Resources.getResourceAsStream(resource);
-	         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	      }
+	static {
+		try {
+			String resource = "Mapper/config.xml";
+			InputStream inputStream = Resources.getResourceAsStream(resource);
+			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-		public ReservationVO doReser(ReservationVO vo) {
-			   SqlSession session =sqlSessionFactory.openSession(true);
+	public int doReser(ReservationVO vo) {
+		SqlSession session = sqlSessionFactory.openSession(true);
 
-			   int cnt = session.update("doReser",vo);
-			   
-			   session.close();
+		int cnt = session.update("doReser", vo);
 
-			   return vo;
+		session.close();
+
+		return cnt;
 	}
 }

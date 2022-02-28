@@ -18,30 +18,28 @@ import kims.model.UserVO;
 public class doReser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
+		// Post 방식의 인코딩
 		request.setCharacterEncoding("euc-kr");
+		// 세션에 저장된 email가져오기
+		HttpSession session=request.getSession();
+		ReservationVO uvo =(ReservationVO)session.getAttribute("vo");
+		String id = uvo.getId();
 		
-		int reser_num = Integer.parseInt(request.getParameter("reser_num"));
-		String user_id = request.getParameter("user_id");
-		int shop_num = Integer.parseInt(request.getParameter("shop_num"));
-		int pet_num = Integer.parseInt(request.getParameter("pet_num"));
-		String reser_date = request.getParameter("reser_date");
-		String reser_time = request.getParameter("reser_time");
-		String reser_check = request.getParameter("reser_check");
+		// 피라미터 수집에서 form태그 통해서 보낸값 받기
+		String reser_date= request.getParameter("reser_date");
+		String reser_time= request.getParameter("reser_time");
+		String reser_check= request.getParameter("reser_check");
 		
-		ReservationVO rvo = new ReservationVO(reser_num,user_id);
-		
+		ReservationVO vo =new ReservationVO(id, reser_date, reser_time, reser_check );
 		
 		ReservationDAO dao =new ReservationDAO();
-		ReservationVO vo = dao.doReser(vo);
-		
-		if(vo != null) {
-		
-			HttpSession session =request.getSession();
-			session.setAttribute("vo", vo);
+		int cnt=dao.update(vo);
+		if(cnt>0) {
+//			session.setAttribute("vo", vo);
+			response.sendRedirect("goMain");
 		}else {
+			response.sendRedirect("update.jsp");
 		}
-		response.sendRedirect("goMain");
-	}
-
+}
 }

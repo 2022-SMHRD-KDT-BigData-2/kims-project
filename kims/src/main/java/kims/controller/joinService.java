@@ -15,17 +15,18 @@ public class joinService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setCharacterEncoding("euc-kr");
         
+		String name =request.getParameter("name");
         String id =request.getParameter("id");
-        String pw =request.getParameter("pw");
-        String admin =request.getParameter("admin");
-        String name =request.getParameter("name");
-        String tel =request.getParameter("tel");
         String email =request.getParameter("email");
+        String pw =request.getParameter("pw");
+        String tel =request.getParameter("tel");
+        String question =request.getParameter("question");
         String answer =request.getParameter("answer");
         
-        UserVO vo = new UserVO(id, name, pw, tel, email, admin, answer);
+        UserVO vo = new UserVO(name,id,email,pw,tel,question,answer);
         
         // 2. DAO에 넘겨줘서 DB에 저장
         UserDAO dao=new UserDAO();
@@ -34,10 +35,10 @@ public class joinService extends HttpServlet {
         
         if(cnt > 0) {
            
-           response.sendRedirect("join_success.jsp"); 
+           response.sendRedirect("main.jsp"); 
         }else {
            
-           response.sendRedirect("goMain");
+           response.sendRedirect("fail.jsp");
         }
 	
 	}

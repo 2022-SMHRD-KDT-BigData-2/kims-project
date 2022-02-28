@@ -7,16 +7,16 @@ public class UserVO {
 	private String pw;
 	private String tel;
 	private String email;
-	private String admin;
+	private String question;
 	private String answer;
-	public UserVO(String id, String name, String pw, String tel, String email, String admin, String answer) {
+	public UserVO(String id, String name, String pw, String tel, String email, String question, String answer) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.pw = pw;
 		this.tel = tel;
 		this.email = email;
-		this.admin = admin;
+		this.question = question;
 		this.answer = answer;
 	}
 	public UserVO(String id,String pw) {
@@ -64,10 +64,10 @@ public class UserVO {
 		this.email = email;
 	}
 	public String getAdmin() {
-		return admin;
+		return question;
 	}
-	public void setAdmin(String admin) {
-		this.admin = admin;
+	public void setAdmin(String question) {
+		this.question = question;
 	}
 	public String getAnswer() {
 		return answer;
