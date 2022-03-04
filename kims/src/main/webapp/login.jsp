@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="register">
-		<h2>로그인</h2>aa
+		<h2>로그인</h2>
 		<form action="">
 			<div class="flex">
 				<ul class="container">
