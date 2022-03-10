@@ -11,7 +11,7 @@
 - api를 기반으로 위치 정보를 볼수 있는 서비스
 
 ## 유스케이스
-![화면 캡처 2022-03-10 083609](C:\Users\SM016\Desktop\이미지) : 이미지
+![화면 캡처 2022-03-10 083609](https://user-images.githubusercontent.com/99226165/157620773-8996aef7-70f7-4c9a-a6d1-1618e9041fe1.jpg) 
 
 ## 개발환경
 - 사용언어 : Java 1.8 /HTML/ CSS/ Javascript
