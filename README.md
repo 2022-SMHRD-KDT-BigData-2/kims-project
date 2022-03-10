@@ -25,5 +25,5 @@
 ![화면 캡처 2022-03-10 084659](https://user-images.githubusercontent.com/99226165/157620376-74e3cce3-cf8a-4055-999c-2c789450b20a.jpg)
 
 ## 팀원소개
-![화면 캡처 2022-03-10 174854]()
+![화면 캡처 2022-03-10 174854](https://user-images.githubusercontent.com/99226165/157625392-9172192d-8443-40e8-98aa-592d44c5c39c.jpg)
 ## 서비스 
